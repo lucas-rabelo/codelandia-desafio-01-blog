@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { AnchorHTMLAttributes, useState } from 'react';
 import {
     Container,
     Header,
@@ -10,18 +10,21 @@ import {
     Description
 } from './styles';
 
-export type CardProps = {
+export interface CardProps {
     date: string;
     title: string;
     description: string;
     isFavorite: boolean;
 }
 
-export function Card(props: CardProps) {
-    const { date, title, description, isFavorite } = props;
+interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
+    data: CardProps;
+}
+
+export function Card({ data, ...rest }: Props) {
+    const { date, title, description, isFavorite } = data;
 
     const [favorite, setFavorite] = useState<boolean>(isFavorite);
-
 
     function handleFavorite() {
         setFavorite(!favorite);
@@ -36,7 +39,7 @@ export function Card(props: CardProps) {
                     <Icon weight={favorite ? 'fill' : 'regular'} />
                 </ButtonIcon>
             </Header>
-            <Content>
+            <Content {...rest}>
                 <Title>
                     { title }
                 </Title>

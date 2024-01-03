@@ -7,11 +7,17 @@ export const Container = styled.div`
 
     width: clamp(327px, 100%, 1216px);
 
-    padding: 16px 24px;
+    padding: 5px 24px;
     border-radius: 8px;
     gap: 12px;
 
     background: var(--dark-30);
+
+    border: 1px solid var(--dark-30);
+
+    &:hover {
+        border: 1px solid var(--brand-color);
+    }
 `;
 
 export const Icon = styled(MagnifyingGlass)`
@@ -22,4 +28,6 @@ export const Icon = styled(MagnifyingGlass)`
 export const Input = styled.input`
     width: 100%;
     color: var(--dark-60);
+
+    line-height: 2rem;
 `;

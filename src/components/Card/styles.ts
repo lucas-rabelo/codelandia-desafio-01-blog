@@ -24,6 +24,8 @@ export const Header = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    flex: 99;
 `;
 
 export const Date = styled.span`
@@ -47,7 +49,7 @@ export const Icon = styled(Heart)`
     font-size: 20px;
 `;
 
-export const Content = styled.div`
+export const Content = styled.a`
     display: flex;
     flex-direction: column;
 
