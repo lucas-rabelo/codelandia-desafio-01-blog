@@ -1,12 +1,12 @@
 import { InputSearch } from "../InputSearch";
-import { Button } from '../Button';
+// import { Button } from '../Button';
 
 import {
     Container,
     Title,
-    HeaderArea,
-    Logo,
-    ButtonsArea,
+    // HeaderArea,
+    // Logo,
+    // ButtonsArea,
 } from './styles';
 
 export function Header() {
