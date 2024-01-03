@@ -1,4 +1,5 @@
-import { InputSearch } from "../InputSearch";
+import { ReactNode } from "react";
+
 // import { Button } from '../Button';
 
 import {
@@ -9,7 +10,11 @@ import {
     // ButtonsArea,
 } from './styles';
 
-export function Header() {
+interface Props {
+    children: ReactNode;
+}
+
+export function Header({ children }: Props) {
     return(
         <Container>
             {/* <HeaderArea>
@@ -26,7 +31,7 @@ export function Header() {
                 <span>Code</span>lândia
             </Title>
 
-            <InputSearch />
+            { children }
         </Container>
     )
 }

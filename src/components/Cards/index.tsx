@@ -9,10 +9,18 @@ interface DataListProps extends CardProps {
     id: string;
 }
 
-export function Cards() {
+interface Props {
+    search: string;
+}
+
+export function Cards({ search }: Props) {
 
     const navigate = useNavigate();
     const DATA: DataListProps[] = posts;
+
+    const filteredPosts = search.length > 0
+        ? DATA.filter(post => post.title.includes(search))
+        : DATA;
 
     function handleOpenPost(postId: string) {
         navigate(`/post/${postId}`);
@@ -20,7 +28,7 @@ export function Cards() {
 
     return(
         <Container>
-            { DATA.map(value => (
+            { filteredPosts.map(value => (
                 <Card 
                     key={value.id}
                     data={value}

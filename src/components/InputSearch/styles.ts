@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { MagnifyingGlass } from '@phosphor-icons/react';
 
-export const Container = styled.div`
+export const Container = styled.form`
     display: flex;
     align-items: center;
 
@@ -18,6 +18,14 @@ export const Container = styled.div`
     &:hover {
         border: 1px solid var(--brand-color);
     }
+`;
+
+export const ButtonIcon = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
 `;
 
 export const Icon = styled(MagnifyingGlass)`

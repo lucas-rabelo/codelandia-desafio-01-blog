@@ -1,17 +1,26 @@
+import { InputHTMLAttributes } from 'react';
 import { 
     Container,
+    ButtonIcon,
     Icon,
     Input
 } from './styles';
 
-export function InputSearch() {
+type Props = InputHTMLAttributes<HTMLInputElement> & {
+    onSubmit: () => void;
+}
+
+export function InputSearch({ onSubmit, ...rest }: Props) {    
     return(
-        <Container>
-            <Icon />
+        <Container onSubmit={() => onSubmit}>
+            <ButtonIcon type="submit">
+                <Icon />
+            </ButtonIcon>
 
             <Input 
                 type="text"
                 placeholder='Pesquise aqui'
+                {...rest}
             />
         </Container>
     );
